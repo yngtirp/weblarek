@@ -219,4 +219,4 @@ interface IApi {
 
 `async getProducts(): Promise<IProduct[]> ` - Метод для получения с сервера списка товаров
 
-`async sendOrder(order: IOrderData): Promise<object>` - Метод для отправки на сервер данных о заказе, включая сведения о покупателе и выбранных товарах.
+`async sendOrder(order: IOrderData): Promise<IOrderResponse>` - Метод для отправки на сервер данных о заказе, включая сведения о покупателе и выбранных товарах.

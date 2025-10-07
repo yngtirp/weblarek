@@ -1,4 +1,4 @@
-import { IApi, IProduct, IApiResponse, IOrderData } from "../../../types/index";
+import { IApi, IProduct, IApiResponse, IOrderData, IOrderResponse } from "../../../types/index";
 
 export class Communication {
   constructor(private api: IApi) {}
@@ -8,8 +8,8 @@ export class Communication {
     return data.items;
   }
 
-  async sendOrder(order: IOrderData): Promise<object> {
-    const response = await this.api.post<object>("/order", order);
+  async sendOrder(order: IOrderData): Promise<IOrderResponse> {
+    const response = await this.api.post<IOrderResponse>("/order", order);
     return response;
   }
 }

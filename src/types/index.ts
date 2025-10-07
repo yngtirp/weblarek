@@ -52,6 +52,11 @@ export interface IApiResponse {
     items: IProduct[];
   }
 
+export interface IOrderResponse {
+    id: string,
+    total: number
+ }
+
 export interface IOrderData extends TBuyer{
     items: string[];
     total: number;
@@ -59,6 +64,6 @@ export interface IOrderData extends TBuyer{
 
 export interface ICommunication { 
     getProducts(): Promise<IProduct[]>;
-    sendOrder(order: IOrderData): Promise<object>;
+    sendOrder(order: IOrderData): Promise<IOrderResponse>;
 }
   
